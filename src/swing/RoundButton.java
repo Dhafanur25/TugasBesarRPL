@@ -13,6 +13,8 @@ public class RoundButton extends JButton {
         setContentAreaFilled(false);
         setButtonText("Default Text");
         setForeground(Color.BLACK);
+        setHorizontalAlignment(CENTER); 
+        setVerticalAlignment(CENTER); 
     }
 
     @Override

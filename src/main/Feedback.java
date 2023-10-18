@@ -35,17 +35,17 @@ public class Feedback extends javax.swing.JFrame {
         TitleFB = new javax.swing.JLabel();
         labelTulisFB = new javax.swing.JLabel();
         labelTopFB = new javax.swing.JLabel();
-        isiFB = new swing.labelArea();
         cardPanel = new javax.swing.JPanel();
-        c1 = new swing.labelArea();
-        c2 = new swing.labelArea();
-        c3 = new swing.labelArea();
-        c4 = new swing.labelArea();
-        c5 = new swing.labelArea();
+        c1 = new swing.LabelArea();
+        c2 = new swing.LabelArea();
+        c3 = new swing.LabelArea();
+        c4 = new swing.LabelArea();
+        c5 = new swing.LabelArea();
         buttonFeedback = new swing.RoundButton();
         buttonPrev = new swing.RoundButton();
         buttonNext = new swing.RoundButton();
-        link3 = new swing.Link3();
+        link = new swing.Link3();
+        isiFB = new swing.LabelArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(663, 440));
@@ -70,38 +70,34 @@ public class Feedback extends javax.swing.JFrame {
         labelTopFB.setForeground(new java.awt.Color(0, 0, 0));
         labelTopFB.setText("Top Feedback");
 
-        isiFB.setEditable(true);
-        isiFB.setBackground(new java.awt.Color(217, 217, 217));
-        isiFB.setColumns(20);
-        isiFB.setRows(5);
-        isiFB.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-
         cardPanel.setOpaque(false);
         cardPanel.setLayout(new java.awt.CardLayout());
 
         c1.setColumns(20);
         c1.setRows(5);
-        c1.setText("c");
+        c1.setText("Hello");
         cardPanel.add(c1, "card2");
 
         c2.setColumns(20);
         c2.setRows(5);
-        c2.setText("df");
+        c2.setText("Konselor Baik");
         cardPanel.add(c2, "card2");
 
         c3.setColumns(20);
         c3.setRows(5);
-        c3.setText("dasdsa");
+        c3.setText("Aplikasi Bagus");
+        c3.setToolTipText("");
         cardPanel.add(c3, "card2");
 
         c4.setColumns(20);
         c4.setRows(5);
-        c4.setText("c");
+        c4.setText("gwenchana");
         cardPanel.add(c4, "card2");
 
         c5.setColumns(20);
         c5.setRows(5);
-        c5.setText("c");
+        c5.setText("seru");
+        c5.setToolTipText("");
         cardPanel.add(c5, "card2");
 
         buttonFeedback.setBackground(new java.awt.Color(102, 102, 102));
@@ -143,11 +139,16 @@ public class Feedback extends javax.swing.JFrame {
             }
         });
 
-        link3.addActionListener(new java.awt.event.ActionListener() {
+        link.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                link3ActionPerformed(evt);
+                linkActionPerformed(evt);
             }
         });
+
+        isiFB.setEditable(true);
+        isiFB.setBackground(new java.awt.Color(217, 217, 217));
+        isiFB.setColumns(20);
+        isiFB.setRows(5);
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -155,47 +156,56 @@ public class Feedback extends javax.swing.JFrame {
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(isiFB, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(TitleFB)
-                    .addComponent(labelTulisFB)
-                    .addComponent(link3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonFeedback, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(buttonPrev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(buttonNext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(labelTopFB))
-                .addContainerGap(37, Short.MAX_VALUE))
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TitleFB)
+                            .addComponent(link, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(isiFB, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonFeedback, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelTulisFB))
+                        .addGap(68, 68, 68)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonNext, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelTopFB))
+                        .addGap(97, 97, 97))))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(TitleFB)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(82, 82, 82)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(labelTulisFB)
+                                .addGap(124, 124, 124))
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(isiFB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(buttonFeedback, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(labelTopFB)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(buttonPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonNext, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(TitleFB)
-                        .addGap(28, 28, 28)
-                        .addComponent(labelTulisFB)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(isiFB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(buttonFeedback, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49)
-                        .addComponent(link3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(buttonNext, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(49, 49, 49)
+                .addComponent(link, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
 
@@ -204,8 +214,8 @@ public class Feedback extends javax.swing.JFrame {
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         backgroundLayout.setVerticalGroup(
@@ -233,7 +243,7 @@ public class Feedback extends javax.swing.JFrame {
 
     private void buttonFeedbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFeedbackActionPerformed
         // TODO add your handling code here:
-
+        isiFB.setText("");
     }//GEN-LAST:event_buttonFeedbackActionPerformed
 
     private void buttonPrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPrevActionPerformed
@@ -248,9 +258,12 @@ public class Feedback extends javax.swing.JFrame {
 
     }//GEN-LAST:event_buttonNextActionPerformed
 
-    private void link3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_link3ActionPerformed
+    private void linkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_linkActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_link3ActionPerformed
+        dispose();
+        Welcome x = new Welcome();
+        x.setVisible(true);
+    }//GEN-LAST:event_linkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,16 +321,16 @@ public class Feedback extends javax.swing.JFrame {
     private swing.RoundButton buttonFeedback;
     private swing.RoundButton buttonNext;
     private swing.RoundButton buttonPrev;
-    private swing.labelArea c1;
-    private swing.labelArea c2;
-    private swing.labelArea c3;
-    private swing.labelArea c4;
-    private swing.labelArea c5;
+    private swing.LabelArea c1;
+    private swing.LabelArea c2;
+    private swing.LabelArea c3;
+    private swing.LabelArea c4;
+    private swing.LabelArea c5;
     private javax.swing.JPanel cardPanel;
-    private swing.labelArea isiFB;
+    private swing.LabelArea isiFB;
     private javax.swing.JLabel labelTopFB;
     private javax.swing.JLabel labelTulisFB;
-    private swing.Link3 link3;
+    private swing.Link3 link;
     private javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
 }

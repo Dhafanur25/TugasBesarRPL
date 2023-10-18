@@ -4,6 +4,9 @@
  */
 package main;
 
+import java.io.File;
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author dhafa
@@ -35,14 +38,14 @@ public class UbahProfil extends javax.swing.JFrame {
         labelAlamat = new javax.swing.JLabel();
         labelBio = new javax.swing.JLabel();
         labelGender = new javax.swing.JLabel();
-        isiNama = new javax.swing.JTextField();
-        isiEmail = new javax.swing.JTextField();
-        isiNoTelp = new javax.swing.JTextField();
-        isiAlamat = new javax.swing.JTextField();
-        isiBio = new swing.textarea();
-        isiGender = new swing.combobox();
+        isiGender = new swing.RoundComboBox();
         buttonSimpanPer = new swing.RoundButton();
         buttonUbahFoto = new swing.RoundButton();
+        isiBio = new swing.RoundTextArea();
+        isiNama = new swing.RoundTextField();
+        isiEmail = new swing.RoundTextField();
+        isiNoTelp = new swing.RoundTextField();
+        isiAlamat = new swing.RoundTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,34 +89,7 @@ public class UbahProfil extends javax.swing.JFrame {
         labelGender.setForeground(new java.awt.Color(0, 0, 0));
         labelGender.setText("Jenis Kelamin");
 
-        isiNama.setBackground(new java.awt.Color(217, 217, 217));
-        isiNama.setForeground(new java.awt.Color(0, 0, 0));
-
-        isiEmail.setBackground(new java.awt.Color(217, 217, 217));
-        isiEmail.setForeground(new java.awt.Color(0, 0, 0));
-
-        isiNoTelp.setBackground(new java.awt.Color(217, 217, 217));
-        isiNoTelp.setForeground(new java.awt.Color(0, 0, 0));
-
-        isiAlamat.setBackground(new java.awt.Color(217, 217, 217));
-        isiAlamat.setForeground(new java.awt.Color(0, 0, 0));
-
-        isiBio.setColumns(20);
-        isiBio.setLineWrap(true);
-        isiBio.setRows(5);
-        isiBio.setWrapStyleWord(true);
-
         isiGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Pilih>", "Pria", "Wanita" }));
-        isiGender.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
-            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
-            }
-            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
-                isiGenderPopupMenuWillBecomeInvisible(evt);
-            }
-            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
-                isiGenderPopupMenuWillBecomeVisible(evt);
-            }
-        });
 
         buttonSimpanPer.setBackground(new java.awt.Color(102, 102, 102));
         buttonSimpanPer.setForeground(new java.awt.Color(255, 255, 255));
@@ -139,57 +115,59 @@ public class UbahProfil extends javax.swing.JFrame {
             }
         });
 
+        isiBio.setColumns(20);
+        isiBio.setRows(5);
+
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(33, 33, 33)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(buttonSimpanPer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonSimpanPer, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
                     .addComponent(labelEmail)
                     .addComponent(TitleUP)
                     .addComponent(labelNama)
                     .addComponent(labelAlamat)
                     .addComponent(labelNoTelp)
-                    .addComponent(isiNama)
-                    .addComponent(isiEmail)
-                    .addComponent(isiNoTelp)
-                    .addComponent(isiAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(isiNama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(isiEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(isiNoTelp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(isiAlamat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buttonUbahFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(86, 86, 86))
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGap(71, 71, 71)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelBio)
-                            .addComponent(isiBio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(labelGender)
-                            .addComponent(isiGender, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(buttonUbahFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                            .addComponent(isiGender, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(isiBio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38))))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addComponent(TitleUP)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNama)
-                    .addComponent(labelBio))
-                .addGap(4, 4, 4)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addComponent(isiBio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelNama)
+                            .addComponent(labelBio))
+                        .addGap(7, 7, 7)
                         .addComponent(isiNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(labelEmail)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(isiEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)))
+                        .addComponent(isiEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(isiBio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addComponent(labelNoTelp)
@@ -201,13 +179,13 @@ public class UbahProfil extends javax.swing.JFrame {
                         .addComponent(isiGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, Short.MAX_VALUE)
                 .addComponent(labelAlamat)
-                .addGap(6, 6, 6)
+                .addGap(3, 3, 3)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonUbahFoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonUbahFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(isiAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(buttonSimpanPer, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                .addGap(30, 30, 30))
+                .addGap(32, 32, 32))
         );
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
@@ -215,16 +193,16 @@ public class UbahProfil extends javax.swing.JFrame {
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -242,22 +220,25 @@ public class UbahProfil extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonUbahFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUbahFotoActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        int returnValue = fileChooser.showOpenDialog(this);
+
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            String filePath = selectedFile.getAbsolutePath();
+        }
+
+    }//GEN-LAST:event_buttonUbahFotoActionPerformed
+
     private void buttonSimpanPerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSimpanPerActionPerformed
         // TODO add your handling code here:
         dispose();
+        BioMahasiswa x = new BioMahasiswa();
+        x.setVisible(true);
     }//GEN-LAST:event_buttonSimpanPerActionPerformed
-
-    private void buttonUbahFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUbahFotoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonUbahFotoActionPerformed
-
-    private void isiGenderPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_isiGenderPopupMenuWillBecomeInvisible
-        // TODO add your handling code here:
-    }//GEN-LAST:event_isiGenderPopupMenuWillBecomeInvisible
-
-    private void isiGenderPopupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_isiGenderPopupMenuWillBecomeVisible
-        // TODO add your handling code here:
-    }//GEN-LAST:event_isiGenderPopupMenuWillBecomeVisible
 
     /**
      * @param args the command line arguments
@@ -302,12 +283,12 @@ public class UbahProfil extends javax.swing.JFrame {
     private Background.Background background;
     private swing.RoundButton buttonSimpanPer;
     private swing.RoundButton buttonUbahFoto;
-    private javax.swing.JTextField isiAlamat;
-    private swing.textarea isiBio;
-    private javax.swing.JTextField isiEmail;
-    private swing.combobox isiGender;
-    private javax.swing.JTextField isiNama;
-    private javax.swing.JTextField isiNoTelp;
+    private swing.RoundTextField isiAlamat;
+    private swing.RoundTextArea isiBio;
+    private swing.RoundTextField isiEmail;
+    private swing.RoundComboBox isiGender;
+    private swing.RoundTextField isiNama;
+    private swing.RoundTextField isiNoTelp;
     private javax.swing.JLabel labelAlamat;
     private javax.swing.JLabel labelBio;
     private javax.swing.JLabel labelEmail;

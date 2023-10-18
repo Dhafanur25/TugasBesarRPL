@@ -25,10 +25,11 @@ public class Login extends javax.swing.JFrame {
         label = new javax.swing.JLabel();
         isiNama = new swing.TextField();
         isiPassword = new swing.PasswordField();
-        buttonSignIn = new swing.coolButton();
+        buttonSignIn = new swing.CoolButton();
         link = new swing.Link1();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setFocusable(false);
 
         background.setBlur(mainPanel);
         background.setPic("bgLogReg.jpg");
@@ -43,11 +44,6 @@ public class Login extends javax.swing.JFrame {
         isiNama.setHint("Nama Lengkap");
 
         isiPassword.setHint("Password");
-        isiPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                isiPasswordActionPerformed(evt);
-            }
-        });
 
         buttonSignIn.setBackground(new java.awt.Color(255, 255, 255));
         buttonSignIn.setForeground(new java.awt.Color(255, 255, 255));
@@ -137,11 +133,10 @@ public class Login extends javax.swing.JFrame {
 
     private void buttonSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSignInActionPerformed
         // TODO add your handling code here:
+        dispose();
+        Welcome x = new Welcome();
+        x.setVisible(true);
     }//GEN-LAST:event_buttonSignInActionPerformed
-
-    private void isiPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isiPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_isiPasswordActionPerformed
 
     private void linkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_linkActionPerformed
         // TODO add your handling code here:
@@ -166,7 +161,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Background.BackgroundRL background;
-    private swing.coolButton buttonSignIn;
+    private swing.CoolButton buttonSignIn;
     private swing.TextField isiNama;
     private swing.PasswordField isiPassword;
     private javax.swing.JLabel label;

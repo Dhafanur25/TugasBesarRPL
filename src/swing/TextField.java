@@ -33,7 +33,7 @@ public class TextField extends JTextField {
     public TextField() {
         setOpaque(false);
         setBorder(new EmptyBorder(9, 1, 9, 1));
-        setBackground(new Color(232, 232, 232));
+        setBackground(new Color(0, 0, 0, 0));
         setForeground(new Color(255, 255, 255));
         setSelectionColor(new Color(232, 232, 232));
         animator = new Animator(350, new TimingTargetAdapter() {

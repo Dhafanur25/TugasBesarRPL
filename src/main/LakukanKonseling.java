@@ -13,6 +13,7 @@ public class LakukanKonseling extends javax.swing.JFrame {
     /**
      * Creates new form LakukanKonseling
      */
+
     public LakukanKonseling() {
         initComponents();
     }
@@ -26,168 +27,136 @@ public class LakukanKonseling extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        background1 = new Background.Background();
-        jPanel1 = new javax.swing.JPanel();
-        link32 = new swing.Link3();
-        combobox1 = new swing.combobox();
-        jLabel2 = new javax.swing.JLabel();
-        combobox2 = new swing.combobox();
-        combobox3 = new swing.combobox();
-        roundedButton3 = new swing.RoundButton();
+        background = new Background.Background();
+        mainPanel = new javax.swing.JPanel();
+        link = new swing.Link3();
+        TitleKonseling = new javax.swing.JLabel();
+        boxKonselor = new swing.RoundComboBox();
+        boxHari = new swing.RoundComboBox();
+        boxJam = new swing.RoundComboBox();
+        buttonHub = new swing.RoundButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setFocusableWindowState(false);
 
-        background1.setBlur(jPanel1);
-        background1.setPic("bgLK.png");
+        background.setBlur(mainPanel);
+        background.setPic("bgLK.png");
 
-        jPanel1.setOpaque(false);
+        mainPanel.setOpaque(false);
 
-        combobox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Pilih Konselor>", "Pria", "Wanita" }));
-        combobox1.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
-            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
-            }
-            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
-                combobox1PopupMenuWillBecomeInvisible(evt);
-            }
-            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
-            }
-        });
-
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Lakukan Konseling");
-
-        combobox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Pilih Hari Konseling>", "Pria", "Wanita" }));
-        combobox2.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
-            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
-            }
-            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
-                combobox2PopupMenuWillBecomeInvisible(evt);
-            }
-            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
-            }
-        });
-
-        combobox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Pilih Jam Konseling>", "Pria", "Wanita" }));
-        combobox3.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
-            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
-            }
-            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
-                combobox3PopupMenuWillBecomeInvisible(evt);
-            }
-            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
-            }
-        });
-        combobox3.addActionListener(new java.awt.event.ActionListener() {
+        link.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combobox3ActionPerformed(evt);
+                linkActionPerformed(evt);
             }
         });
 
-        roundedButton3.setBackground(new java.awt.Color(102, 102, 102));
-        roundedButton3.setForeground(new java.awt.Color(255, 255, 255));
-        roundedButton3.setText("Hubungi Konselor");
-        roundedButton3.setBackgroundColor("#5271ff");
-        roundedButton3.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
-        roundedButton3.setMaximumSize(new java.awt.Dimension(151, 24));
-        roundedButton3.setMinimumSize(new java.awt.Dimension(151, 24));
-        roundedButton3.addActionListener(new java.awt.event.ActionListener() {
+        TitleKonseling.setBackground(new java.awt.Color(0, 0, 0));
+        TitleKonseling.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
+        TitleKonseling.setForeground(new java.awt.Color(0, 0, 0));
+        TitleKonseling.setText("Lakukan Konseling");
+
+        boxKonselor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Pilih Konselor>", "Pria", "Wanita" }));
+
+        boxHari.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Pilih Hari Konseling>", "Pria", "Wanita" }));
+
+        boxJam.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Pilih Jam Konseling>", "Pria", "Wanita" }));
+
+        buttonHub.setBackground(new java.awt.Color(102, 102, 102));
+        buttonHub.setForeground(new java.awt.Color(255, 255, 255));
+        buttonHub.setText("Hubungi Konselor");
+        buttonHub.setBackgroundColor("#5271ff");
+        buttonHub.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        buttonHub.setMaximumSize(new java.awt.Dimension(151, 24));
+        buttonHub.setMinimumSize(new java.awt.Dimension(151, 24));
+        buttonHub.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                roundedButton3ActionPerformed(evt);
+                buttonHubActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(link32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2)
-                        .addComponent(combobox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(combobox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(combobox3, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(roundedButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(333, Short.MAX_VALUE))
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(mainPanelLayout.createSequentialGroup()
+                            .addGap(16, 16, 16)
+                            .addComponent(buttonHub, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(boxHari, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(boxJam, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(link, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TitleKonseling)
+                        .addComponent(boxKonselor, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(359, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel2)
+                .addComponent(TitleKonseling)
                 .addGap(30, 30, 30)
-                .addComponent(combobox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(boxKonselor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(combobox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(boxHari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(combobox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(boxJam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(roundedButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(90, 90, 90)
-                .addComponent(link32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonHub, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(100, 100, 100)
+                .addComponent(link, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
 
-        javax.swing.GroupLayout background1Layout = new javax.swing.GroupLayout(background1);
-        background1.setLayout(background1Layout);
-        background1Layout.setHorizontalGroup(
-            background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background1Layout.createSequentialGroup()
+        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
+        background.setLayout(backgroundLayout);
+        backgroundLayout.setHorizontalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
                 .addContainerGap(20, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
-        background1Layout.setVerticalGroup(
-            background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(background1Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+        backgroundLayout.setVerticalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void combobox1PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_combobox1PopupMenuWillBecomeInvisible
+    private void buttonHubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHubActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_combobox1PopupMenuWillBecomeInvisible
+        dispose();
+        BioKonselor x = new BioKonselor();
+        x.setVisible(true);
+    }//GEN-LAST:event_buttonHubActionPerformed
 
-    private void combobox2PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_combobox2PopupMenuWillBecomeInvisible
+    private void linkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_linkActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_combobox2PopupMenuWillBecomeInvisible
-
-    private void combobox3PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_combobox3PopupMenuWillBecomeInvisible
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_combobox3PopupMenuWillBecomeInvisible
-
-    private void roundedButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roundedButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_roundedButton3ActionPerformed
-
-    private void combobox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combobox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_combobox3ActionPerformed
+        dispose();
+        Welcome x = new Welcome();
+        x.setVisible(true);
+    }//GEN-LAST:event_linkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,13 +197,13 @@ public class LakukanKonseling extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Background.Background background1;
-    private swing.combobox combobox1;
-    private swing.combobox combobox2;
-    private swing.combobox combobox3;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private swing.Link3 link32;
-    private swing.RoundButton roundedButton3;
+    private javax.swing.JLabel TitleKonseling;
+    private Background.Background background;
+    private swing.RoundComboBox boxHari;
+    private swing.RoundComboBox boxJam;
+    private swing.RoundComboBox boxKonselor;
+    private swing.RoundButton buttonHub;
+    private swing.Link3 link;
+    private javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
 }

@@ -66,7 +66,12 @@ public class BackgroundRL extends JComponent {
             if (width > 0 && height > 0) {
                 bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
                 Graphics2D g2 = bufferedImage.createGraphics();
+
+                // Set rendering quality
                 g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+                g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
                 Rectangle rec = getAutoSize(image);
                 g2.drawImage(((ImageIcon) image).getImage(), rec.x, rec.y, rec.width, rec.height, null);
                 if (blur != null) {

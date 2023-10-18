@@ -3,6 +3,7 @@
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="focusable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -88,7 +89,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="isiPassword" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="checkbox" alignment="0" pref="267" max="32767" attributes="0"/>
+                                  <Component id="check" alignment="0" pref="267" max="32767" attributes="0"/>
                                   <Component id="isiUsername" alignment="0" max="32767" attributes="0"/>
                                   <Component id="isiEmail" alignment="0" max="32767" attributes="0"/>
                                   <Component id="isiNama" alignment="0" max="32767" attributes="0"/>
@@ -113,7 +114,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="isiPassword" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="checkbox" min="-2" max="-2" attributes="0"/>
+                      <Component id="check" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="12" max="32767" attributes="0"/>
                       <Component id="buttonRegis" min="-2" pref="49" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -158,9 +159,9 @@
                 <Property name="hint" type="java.lang.String" value="Password"/>
               </Properties>
             </Component>
-            <Component class="swing.checkbox" name="checkbox">
+            <Component class="swing.CoolCheckBox" name="check">
             </Component>
-            <Component class="swing.coolButton" name="buttonRegis">
+            <Component class="swing.CoolButton" name="buttonRegis">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>

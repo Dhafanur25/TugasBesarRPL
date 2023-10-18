@@ -65,7 +65,12 @@ public class Background extends JComponent {
             if (width > 0 && height > 0) {
                 bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
                 Graphics2D g2 = bufferedImage.createGraphics();
+
+                // Set rendering quality
                 g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+                g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
                 Rectangle rec = getAutoSize(image);
                 g2.drawImage(((ImageIcon) image).getImage(), rec.x, rec.y, rec.width, rec.height, null);
                 if (blur != null) {
@@ -75,13 +80,13 @@ public class Background extends JComponent {
             }
         }
     }
+    
 
     private void createBlurImage(Graphics2D g) {
         int x = blur.getX();
         int y = blur.getY();
         int width = blur.getWidth();
         int height = blur.getHeight();
-        int shadow = 8;
         if (width > 0 && height > 0) {
             BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
             Graphics2D g2 = img.createGraphics();
@@ -105,7 +110,7 @@ public class Background extends JComponent {
         if (bufferedImage != null) {
             BufferedImage img = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
             Graphics2D g2 = img.createGraphics();
-            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY); 
             g2.fill(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 20, 20));
             g2.setComposite(AlphaComposite.SrcIn);
             g2.drawImage(bufferedImage, 0, 0, null);
