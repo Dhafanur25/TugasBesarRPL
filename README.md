@@ -1,4 +1,2 @@
-# TugasBesarRPL
-Tugas Besar RPL Implementasi
-Aplikasi YouthWellness
-Warning: Run main login.java before opening anything in package main
+# YouthWellness
+Aplikasi untuk mahasiswa yang mempunyai masalah kesehatan mental. Bisa set dan hapus jadwal dengan konselor serta memberi feedback pada aplikasi.
