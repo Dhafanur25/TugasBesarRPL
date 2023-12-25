@@ -213,7 +213,7 @@ public class WelcomeP extends javax.swing.JPanel {
 
     private void buttonQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonQuizActionPerformed
         try {
-            URI uri = new URI("https://github.com/Dhafanur25/TugasBesarRPL");
+            URI uri = new URI("https://forms.gle/325XJWCqV8c6ZHSq6");
             Desktop.getDesktop().browse(uri);
               
         }catch (IOException | URISyntaxException ex) {
