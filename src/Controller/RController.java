@@ -43,7 +43,7 @@ public class RController {
             JOptionPane.showMessageDialog(p, "Password must be 8 or more!", "Error", JOptionPane.ERROR_MESSAGE); 
             
         }else if (!checR.isSelected()){
-            JOptionPane.showMessageDialog(p, "Please agree to terms and condition!", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(p, "Please agree to terms and conditions!", "Error", JOptionPane.ERROR_MESSAGE);
             
         }  
     }
