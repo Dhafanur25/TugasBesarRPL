@@ -12,10 +12,14 @@ public class FController {
     private Database db = Database.getInstance();
     private User u = User.getInstance();
     public void doFB(JPanel p, JTextArea isiFB, LabelArea[] cList){
-        if (insertFBDB(isiFB.getText())){
-            JOptionPane.showMessageDialog(p, "Thank you for your feedback!", "Feedback", JOptionPane.INFORMATION_MESSAGE);
+        if(!isiFB.getText().equals("")){
+            if (insertFBDB(isiFB.getText())){
+                JOptionPane.showMessageDialog(p, "Thank you for your feedback!", "Feedback", JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                JOptionPane.showMessageDialog(p, "Failed to post feedback!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }else{
-            JOptionPane.showMessageDialog(p, "Failed to post feedback!", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(p, "Feedback cannot be empty!", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
         String sql = "SELECT * FROM konseling_online.feedback "
