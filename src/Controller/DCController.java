@@ -109,6 +109,7 @@ public class DCController {
             }
         } else{
             boxTime.setEnabled(false);
+            boxTime.setSelectedItem("<Choose Counseling Time>");
         }
     }
     private void doSetSchedule(JPanel p, RoundComboBox boxKonselor, 
