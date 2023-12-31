@@ -6,3 +6,4 @@ Aplikasi untuk mahasiswa yang mempunyai masalah kesehatan mental. Bisa set dan h
 2. Buat project java baru
 3. Copy isi folder src di zip ke folder src di project baru
 4. Tambah semua library di folder lib
+5. Run database 'YouthWellnessDB.sql'
